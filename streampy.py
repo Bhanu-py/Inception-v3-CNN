@@ -1,12 +1,6 @@
-from glob import glob
-from numpy.random import choice
 import streamlit as st
-import joblib
-from PIL import Image, ImageStat
-import cv2
-import math
+from PIL import Image
 import os
-from matplotlib.pyplot import cla
 import numpy as np
 import keras
 from keras.preprocessing.image import ImageDataGenerator
@@ -38,10 +32,6 @@ def predict(img_file):
     """
     img = Image.open(img_file)
     new_img = np.asarray(img)
-    datagen = ImageDataGenerator(
-        preprocessing_function=inception_v3.preprocess_input,
-        # rescale = 1/255.0, # No need to scale as the inceptionV3 model already scales data between (-1,1)
-    )
 
     image = keras.preprocessing.image.image_utils.load_img(img_file,
                                                            grayscale=False,
