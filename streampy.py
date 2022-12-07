@@ -8,7 +8,7 @@ from keras.applications import inception_v3
 
 st.title("Vehicle Orientation Assessment")
 
-st.markdown("### 🎲 Classification Application")
+st.markdown("### 🚗🚘🚔🚖🚍 Classification Application")
 st.markdown("This application predicts the orientation of the Vehicle out of 9 Orientations relative to Driver side")
 menu = ["Select image from the below list", "Upload From Computer"]
 choice = st.sidebar.radio(label="Menu", options=["Select image from the below list", "choose your own image"])
