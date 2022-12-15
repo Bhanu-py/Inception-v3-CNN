@@ -20,8 +20,12 @@ else:
     uploaded_file = st.sidebar.file_uploader("Please upload an image:", type=['jpeg', 'jpg', 'png'])
 
 # Loading model
-model = keras.models.load_model('model/model_optimized')
-
+### By full model
+# model = keras.models.load_model('model/model_optimized')
+### By Weights
+model = add_new_last_layer(n_classes=9, fc_layer_size=(224, 224, 3))
+model.load_weights('top_model_weights.h5')
+# print(model.summary())
 
 def predict(img_file):
     """[Predicting whether an image is blur or not]
