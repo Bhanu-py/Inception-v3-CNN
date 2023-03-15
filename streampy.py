@@ -5,6 +5,7 @@ import numpy as np
 import keras
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications import inception_v3
+from util import add_new_last_layer
 
 st.title("Vehicle Orientation Assessment")
 
